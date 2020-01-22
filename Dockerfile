@@ -7,18 +7,18 @@ RUN yum update -y && \
                    git \
                    make \
                    cmake \
-									 rust \
-									 gcc \
-									 zlib-devel \
-									 bzip2-devel \
-									 xz-devel \
-									 epel-release \
-									 centos-release-scl \
-									 llvm-toolset-7 \
-									 cargo
+		   rust \
+		   gcc \
+		   zlib-devel \
+		   bzip2-devel \
+		   xz-devel \
+		   epel-release \
+		   centos-release-scl \
+		   llvm-toolset-7 \
+		   cargo
 
-RUN	git clone https://github.com/10XGenomics/bamtofastq && \
+RUN git clone https://github.com/10XGenomics/bamtofastq && \
 		cd bamtofastq && \
 		cargo build --release
 
-ENV PATH="/bamtofastq/target/release/bamtofastq:${PATH}"
+ENV PATH="/bamtofastq/target/release/:${PATH}"
