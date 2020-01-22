@@ -7,7 +7,7 @@ RUN yum update -y && \
                    git \
                    make \
                    cmake \
-                   rust \
+                   cargo \
                    gcc \
                    zlib-devel \
                    bzip2-devel \
@@ -15,10 +15,9 @@ RUN yum update -y && \
                    epel-release \
                    centos-release-scl \
                    devtoolset-7 \
-                   llvm-toolset-7 \
-                   cargo
+                   llvm-toolset-7
 
-RUN yum-config-manager --enable centos-release-scl && \
+RUN yum-config-manager --enable llvm-toolset-7 && \
     scl enable llvm-toolset-7 bash
 
 RUN git clone https://github.com/10XGenomics/bamtofastq && \
