@@ -15,8 +15,8 @@ RUN yum update -y && \
     yum install -y centos-release-scl && \
     yum install -y rust-toolset-7 && \
     yum install -y cargo && \
-    yum install -y devtoolset-7 && \
-    yum install -y llvm-toolset-7
+    yum install -y devtoolset-7
+
 
 RUN yum-config-manager --enable llvm-toolset-7 && \
     scl enable llvm-toolset-7 bash
